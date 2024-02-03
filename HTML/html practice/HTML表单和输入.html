@@ -1,0 +1,77 @@
+<!-- 写一个能发送登录请求的页面，并使用表单输入信息 -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            log in
+        </title>
+    </head>
+    <body>
+        <h1>
+            发送登录请求，并使用表单输入信息
+        </h1>
+        <h2>
+            用户名、密码
+        </h2>
+        <p>
+            <form method="post">
+                <!-- 这里的Name文本框使用了<label>定义标题 -->
+                <label>Name:
+                    <input type="text" name="name" value="your name"><br/>
+                </label>
+                Password:<input type="password" name="password"><br/>
+                <input type="submit" value="提交">
+                <input type="reset" value="重置">
+            </form>
+        </p>
+        <h2>
+            性别
+        </h2>
+        <p>
+            <form action="">
+                <input type="radio" name="sex" value="male">男<br/>
+                <input type="radio" name="sex" value="female">女<br/>
+                <button>save</button>
+            </form>
+        </p>
+        <h2>
+            复选内容(POST)
+        </h2>
+        <p>
+            <!-- HTTP POST 方法，表单数据会包含在表单体内然后发送给服务器，用于提交敏感数据，如用户名与密码等。 -->
+            <form method="post">
+                <input type="checkbox" name="postcheck" value="A">A<br/>
+                <input type="checkbox" name="postcheck" value="B">B<br/>
+                <input type="checkbox" name="postcheck" value="C">C<br/>
+                <button>save</button>
+            </form>
+        </p>
+        <h2>
+            复选内容(GET)
+        </h2>
+        <p>
+            <!-- 默认值 HTTP GET 方法，表单数据会附加在 action 属性的 URL 中，并以 ?作为分隔符，一般用于不敏感信息，如分页等。 -->
+            <form method="get">
+                <input type="checkbox" name="getcheck" value="D">D<br/>
+                <input type="checkbox" name="getcheck" value="E">E<br/>
+                <input type="checkbox" name="getcheck" value="F">F<br/>
+                <button>save</button>
+            </form>
+        </p>
+        <h2>
+            下拉表单
+        </h2>
+        <p>
+            <form action="" method="get">
+                <select name="num">
+                    <option value="1">111</option>
+                    <option value="2">222</option>
+                    <option value="3">333</option>
+                    <option value="4">444</option>
+                </select>
+                <button>ok</button>
+            </form>
+        </p>
+    </body>
+</html>
