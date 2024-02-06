@@ -1,0 +1,45 @@
+.header {
+    text-align: center;
+    background: 	#3292f3ea;
+    color :whitesmoke;
+    padding: 80px;
+}
+
+.header h1{
+    font-size: 80px;
+    font-family: 微软雅黑;
+}
+
+.login {   
+    text-align: left;
+    background: 	#cfdbe0;
+    color :rgb(6, 6, 6);
+    padding: 80px;
+}
+
+.submit {
+    background: #0095ff90;
+    text-align: center;
+    font-size: 30px;
+}
+
+.bt {
+    background: #ffffff;
+    width: 100px;
+    height: 70px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+}
+.language {
+    text-align:start;
+    text-align: right;
+    font-size: 80px;
+}
+.reset {
+    background: #ffffff;
+    width: 60px;
+    height: 30px;
+    font-size:medium;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
