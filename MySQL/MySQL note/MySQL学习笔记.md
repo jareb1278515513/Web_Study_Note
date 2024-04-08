@@ -3266,18 +3266,21 @@ DROP TEMPORARY TABLE IF EXISTS temp_orders;
 以下实例演示如何复制表 member。
 #### 步骤一：
 获取数据表的完整结构。
+
 ![alt text](<img/屏幕截图 2024-04-07 173056.png>)
 #### 步骤二：
 修改 SQL 语句的数据表名，并执行 SQL 语句。
+
 ![alt text](<img/屏幕截图 2024-04-07 173654.png>)
 
 #### 步骤三：
 执行完第二步骤后，你将在数据库中创建新的克隆表 clone。 如果你想拷贝数据表的数据你可以使用 `INSERT INTO... SELECT` 语句来实现。
+
 ![alt text](<img/屏幕截图 2024-04-07 173946.png>)
 ![alt text](<img/屏幕截图 2024-04-07 173952.png>)
 执行以上步骤后，会完整的复制表的内容，包括表结构及表数据
+
 ![alt text](<img/屏幕截图 2024-04-07 174018.png>)
-。
 
 ### 使用 mysqldump 命令
 mysqldump 命令可以用于备份和还原 MySQL 数据库。
