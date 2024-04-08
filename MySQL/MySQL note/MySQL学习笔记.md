@@ -1,4 +1,4 @@
-# <center><font face="黑体" font color=SeaGreen >HTTP学习笔记</font></center>
+# <center><font face="黑体" font color=SeaGreen >MySQL学习笔记</font></center>
 <center><font face="楷体" size =5 >Jaren</font></center>
 
 ## 一、前言
@@ -1761,6 +1761,7 @@ mysqli_close($conn);
 ?>
 ```
 输出结果如下图所示：
+
 ![alt text](<img/屏幕截图 2024-04-01 203121.png>)
 ## 十七、MySQL UNION 操作符
 MySQL UNION 操作符用于连接两个以上的 `SELECT` 语句的结果组合到一个结果集合，并去除重复的行。
@@ -1825,9 +1826,11 @@ WHERE condition2
 </small>
 
 下面是两个数据表的数据：
+
 ![alt text](<img/屏幕截图 2024-04-02 214307.png>)
 
 接下来的内容源代码都可以在MySQL prctice文件夹中找到
+
 ![alt text](<img/屏幕截图 2024-04-02 220849.png>)
 ### SQL UNION 实例
 下面的 SQL 语句从 "babymonster" 和 "blackpink" 表中选取**所有不同的**nationality（只有不同的值）：
@@ -1838,6 +1841,7 @@ SELECT nationality FROM blackpink
 ORDER BY nationality ;
 ```
 执行以上 SQL 输出结果如下：
+
 ![alt text](<img/屏幕截图 2024-04-02 215605.png>)
 
 - 注释：`UNION` 不能用于列出两个表中所有的nationality。如果一些idol来自同一个国家，每个国家只会列出一次。`UNION` 只会选取不同的值。请使用 `UNION ALL` 来选取重复的值！
@@ -1851,6 +1855,7 @@ SELECT nationality FROM blackpink
 ORDER BY nationality ;
 ```
 执行以上 SQL 输出结果如下：
+
 ![alt text](<img/屏幕截图 2024-04-02 220038.png>)
 
 ### 带有 WHERE 的 SQL UNION ALL
@@ -1866,8 +1871,11 @@ ORDER BY age ;
 
 执行以上 SQL 输出结果如下：
 通过命令提示符获取的数据：
+
 ![alt text](<img/屏幕截图 2024-04-02 223113.png>)
+
 使用php脚本处理后的结果：
+
 ![alt text](<img/屏幕截图 2024-04-02 220605.png>)
 
 ## 十八、MySQL ORDER BY(排序) 语句
@@ -2088,6 +2096,7 @@ SELECT * FROM employee_tbl;
 例如我们将以上的数据表按名字进行分组，再统计每个人登录的次数：
 `SELECT name, SUM(signin) as signin_count FROM  employee_tbl GROUP BY name WITH ROLLUP;`
 其中记录 NULL 表示所有人的登录次数。
+
 ![alt text](<img/屏幕截图 2024-04-06 133334.png>)
 
 我们可以使用 `coalesce` 来设置一个可以取代 NUll 的名称，`coalesce` 语法：
@@ -2100,6 +2109,7 @@ SELECT * FROM employee_tbl;
 
 以下实例中如果名字为空我们使用总数代替：
 `SELECT coalesce(name, '总数'), SUM(signin) as signin_count FROM  employee_tbl GROUP BY name WITH ROLLUP;`
+
 ![alt text](<img/屏幕截图 2024-04-06 133405.png>)
 
 ## 二十、MySQL 连接的使用
@@ -2305,6 +2315,7 @@ mysql> SELECT a.runoob_id, a.runoob_author, b.runoob_count FROM runoob_tbl a LEF
 5 rows in set (0.01 sec)
 ```
 以上实例中使用了 LEFT JOIN，该语句会读取左边的数据表 runoob_tbl 的所有选取的字段数据，即使在右侧表 tcount_tbl中 没有对应的 runoob_author 字段值。
+
 ![alt text](img/img_leftjoin.gif)
 
 ### MySQL RIGHT JOIN
@@ -2327,6 +2338,7 @@ mysql> SELECT a.runoob_id, a.runoob_author, b.runoob_count FROM runoob_tbl a RIG
 5 rows in set (0.01 sec)
 ```
 以上实例中使用了 RIGHT JOIN，该语句会读取右边的数据表 tcount_tbl 的所有选取的字段数据，即使在左侧表 runoob_tbl 中没有对应的runoob_author 字段值。
+
 ![alt text](img/img_rightjoin.gif)
 
 ### 在 PHP 脚本中使用 JOIN
@@ -2366,6 +2378,7 @@ mysqli_close($conn);
 ?>
 ```
 输出结果如下图所示：
+
 ![alt text](img/75178A78-101C-44E3-B5B5-F20B3E7445CB.jpg)
 
 ## 二十一、MySQL NULL 值处理
@@ -2875,7 +2888,9 @@ RENAME TO staff;
 ##### 删除
 如下命令使用了 ALTER 命令及 DROP 子句来删除以上创建表的 i 字段：
 `ALTER TABLE aaa  DROP i;`
+
 ![alt text](<img/屏幕截图 2024-04-07 161533.png>)
+
 ![alt text](<img/屏幕截图 2024-04-07 161540.png>)
 如果数据表中只剩余一个字段则无法使用DROP来删除字段。
 
@@ -2884,6 +2899,7 @@ MySQL 中使用 ADD 子句来向数据表中添加列，如下实例在表 aaa �
 `ALTER TABLE aaa ADD t INT;`
 
 执行以上命令后，t 字段会自动添加到数据表字段的末尾。
+
 ![alt text](<img/屏幕截图 2024-04-07 161738.png>)
 
 如果你需要指定新增字段的位置，可以使用MySQL提供的关键字 `FIRST` (设定位第一列)， `AFTER` 字段名（设定位于某个字段之后）。
@@ -2896,6 +2912,7 @@ ALTER TABLE aaa DROP f;
 ALTER TABLE aaa ADD i INT AFTER e;
 ```
 上述命令执行后效果如下：
+
 ![alt text](<img/屏幕截图 2024-04-07 162257.png>)
 ##### 修改
 `FIRST` 和 `AFTER` 关键字可用于 `ADD` 与 `MODIFY` 子句，所以如果你想重置数据表字段的位置就需要先使用 `DROP` 删除字段然后使用 `ADD` 来添加字段并设置位置。
@@ -2920,11 +2937,14 @@ mysql> ALTER aaa
 #### 修改字段默认值
 你可以使用 ALTER 来修改字段的默认值，尝试以下实例：
 `ALTER TABLE aaa ALTER i SET DEFAULT 1000;`
+
 ![alt text](<img/屏幕截图 2024-04-07 162943.png>)
+
 你也可以使用 ALTER 命令及 DROP子句来删除字段的默认值，如下实例：
 `ALTER TABLE aaa ALTER i DROP DEFAULT;`
 
 修改数据表类型，可以使用 `ALTER` 命令及 `TYPE` 子句来完成。尝试以下实例，我们将表aaa的类型修改为 `MYISAM` ：
+
 ![alt text](<img/屏幕截图 2024-04-07 163306.png>)
 注意：查看数据表类型可以使用 SHOW TABLE STATUS 语句。
 
@@ -3921,5 +3941,7 @@ MySQL 有很多内置的函数
 
 #### 运算符的优先级
 最低优先级为： `:=`
+
 ![alt text](img/1011652-20170416163043227-1936139924.png)
+
 最高优先级为： `!`、`BINARY`、 `COLLATE`
